@@ -13,7 +13,7 @@ public class GroundReshaper : MonoBehaviour {
 	private float startOfLastReshaping = 0;
 
 	void Start () {
-		reshapingSpeed = Random.Range (10, 200);
+		reshapingSpeed = Random.Range (10, 100);
 		reshapingByX = Random.Range (0, 2) == 0;
 	}
 
