@@ -14,7 +14,7 @@ public class GroundReshaper : MonoBehaviour {
 
 	void Start () {
 		reshapingSpeed = Random.Range (10, 200);
-		reshapingByX = Random.Range (0, 100) >= 50;
+		reshapingByX = Random.Range (0, 2) == 0;
 	}
 
 	void Update () {
@@ -24,18 +24,19 @@ public class GroundReshaper : MonoBehaviour {
 
 		if (reshapingByX) {
 			if (growing) {
-				if (transform.localScale.x < 0.99) {
-					scaleX = Mathf.Lerp(transform.localScale.x, 1f, Time.time * (reshapingSpeed / 1000f) - startOfLastReshaping);
+				if (scaleX < 0.99) {
+					scaleX = Mathf.Lerp(scaleX, 1f, (Time.time - startOfLastReshaping) * (reshapingSpeed / 1000f));
 				} else {
 					scaleX = 1;
 					growing = false;
 					startOfLastReshaping = Time.time;
 				}
 			} else {
-				if (transform.localScale.x > 0.01) {
-					scaleX = Mathf.Lerp(transform.localScale.x, 0f, Time.time * (reshapingSpeed / 1000f) - startOfLastReshaping);
+				if (scaleX > 0.01) {
+					scaleX = Mathf.Lerp(scaleX, 0f, (Time.time - startOfLastReshaping) * (reshapingSpeed / 1000f));
 				} else {
 					scaleX = 1;
+					scaleY = 0;
 					growing = true;
 					reshapingByX = false;
 					startOfLastReshaping = Time.time;
@@ -43,18 +44,19 @@ public class GroundReshaper : MonoBehaviour {
 			}
 		} else {
 			if (growing) {
-				if (transform.localScale.y < 0.99) {
-					scaleY = Mathf.Lerp(transform.localScale.y, 1f, Time.time * (reshapingSpeed / 1000f) - startOfLastReshaping);
+				if (scaleY < 0.99) {
+					scaleY = Mathf.Lerp(scaleY, 1f, (Time.time - startOfLastReshaping) * (reshapingSpeed / 1000f));
 				} else {
 					scaleY = 1;
 					growing = false;
 					startOfLastReshaping = Time.time;
 				}
 			} else {
-				if (transform.localScale.y > 0.01) {
-					scaleY = Mathf.Lerp(transform.localScale.y, 0f, Time.time * (reshapingSpeed / 1000f) - startOfLastReshaping);
+				if (scaleY > 0.01) {
+					scaleY = Mathf.Lerp(scaleY, 0f, (Time.time - startOfLastReshaping) * (reshapingSpeed / 1000f));
 				} else {
 					scaleY = 1;
+					scaleX = 0;
 					growing = true;
 					reshapingByX = true;
 					startOfLastReshaping = Time.time;
