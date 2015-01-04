@@ -10,11 +10,12 @@ public class GroundReshaper : MonoBehaviour {
 	private const float minBound = 0f;
 	private const float maxBound = 1f;
 
-	private float startOfLastReshaping = 0;
+	private float startOfLastReshaping;
 
 	void Start () {
-		reshapingSpeed = Random.Range (10, 100);
+		reshapingSpeed = Random.Range (10, 50);
 		reshapingByX = Random.Range (0, 2) == 0;
+		startOfLastReshaping = - Random.Range(0, 10) / 10f;
 	}
 
 	void Update () {
@@ -29,6 +30,7 @@ public class GroundReshaper : MonoBehaviour {
 				} else {
 					scaleX = 1;
 					growing = false;
+					reshapingByX = false;
 					startOfLastReshaping = Time.time;
 				}
 			} else {
@@ -49,6 +51,7 @@ public class GroundReshaper : MonoBehaviour {
 				} else {
 					scaleY = 1;
 					growing = false;
+					reshapingByX = true;
 					startOfLastReshaping = Time.time;
 				}
 			} else {

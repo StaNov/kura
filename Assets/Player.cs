@@ -3,23 +3,28 @@ using System.Collections;
 
 public class Player : MonoBehaviour {
 
-	// Use this for initialization
 	void Start () {
 	
 	}
-	
-	// Update is called once per frame
+
 	void Update () {
-		if (Input.GetKeyDown(KeyCode.UpArrow)) {
+		Move();
+	}
+
+	private void Move() {
+		if (Input.GetKeyDown(KeyCode.UpArrow) && Physics2D.Raycast(transform.position, Vector2.up, 1).collider == null) {
 			transform.position += Vector3.up;
 		}
-		if (Input.GetKeyDown(KeyCode.DownArrow)) {
+		
+		if (Input.GetKeyDown(KeyCode.DownArrow) && Physics2D.Raycast(transform.position, -Vector2.up, 1).collider == null) {
 			transform.position += Vector3.down;
 		}
-		if (Input.GetKeyDown(KeyCode.LeftArrow)) {
+		
+		if (Input.GetKeyDown(KeyCode.LeftArrow) && Physics2D.Raycast(transform.position, -Vector2.right, 1).collider == null) {
 			transform.position += Vector3.left;
 		}
-		if (Input.GetKeyDown(KeyCode.RightArrow)) {
+		
+		if (Input.GetKeyDown(KeyCode.RightArrow) && Physics2D.Raycast(transform.position, Vector2.right, 1).collider == null) {
 			transform.position += Vector3.right;
 		}
 	}
