@@ -485,7 +485,7 @@ PlayerSettings:
   WebGL::template: APPLICATION:Default
   additionalIl2CppArgs::additionalIl2CppArgs: 
   firstStreamedSceneWithResources: 0
-  cloudProjectId: 
-  projectName: 
-  organizationId: 
+  cloudProjectId: f56131b6-3a20-4cc2-be90-bdbd9ba5a68d
+  projectName: Kura
+  organizationId: stanov
   cloudEnabled: 0
