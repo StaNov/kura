@@ -6,10 +6,10 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: PlayerMaterial
+  m_Name: EyeMaterial
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
-  m_LightmapFlags: 0
+  m_LightmapFlags: 5
   m_CustomRenderQueue: -1
   stringTagMap: {}
   m_SavedProperties:
@@ -78,20 +78,6 @@ Material:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _SpecGlossMap
-        second:
-          m_Texture: {fileID: 0}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _DetailTex
-        second:
-          m_Texture: {fileID: 0}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
     m_Floats:
       data:
         first:
@@ -107,14 +93,6 @@ Material:
         second: .5
       data:
         first:
-          name: _Shininess
-        second: .100000001
-      data:
-        first:
-          name: _WindQuality
-        second: 0
-      data:
-        first:
           name: _Parallax
         second: .0199999996
       data:
@@ -124,7 +102,7 @@ Material:
       data:
         first:
           name: _Glossiness
-        second: .54400003
+        second: .777999997
       data:
         first:
           name: _BumpScale
@@ -149,10 +127,6 @@ Material:
         first:
           name: _Metallic
         second: 0
-      data:
-        first:
-          name: _Cull
-        second: 2
     m_Colors:
       data:
         first:
@@ -161,12 +135,4 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: .937177837, g: .948529422, b: .125540659, a: 1}
-      data:
-        first:
-          name: _SpecColor
-        second: {r: .200000003, g: .200000003, b: .200000003, a: 1}
-      data:
-        first:
-          name: _HueVariation
-        second: {r: 1, g: .5, b: 0, a: .100000001}
+        second: {r: .470588207, g: .470588207, b: .470588207, a: 1}
