@@ -1,11 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Player : MonoBehaviour {
-
-	void Start () {
-	
-	}
+public class PlayerController : MonoBehaviour {
 
 	void Update () {
 		Move();
